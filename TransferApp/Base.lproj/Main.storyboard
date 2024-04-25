@@ -1,24 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YaA-va-dW3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scene A-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-fh-8iV">
+                                <rect key="frame" x="101" y="416" width="188" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfd-3G-jXd">
+                                <rect key="frame" x="14" y="487" width="365" height="38"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Змінити за допомогою властивостей">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithProperty:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ii-0Y-fBs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnl-Wv-ViT">
+                                <rect key="frame" x="30" y="555" width="333" height="41"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Змінити за допомогою переходу">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="eJF-ke-GCL" kind="show" identifier="toEditScreen" id="ZhK-zb-jrR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-7p-7kh">
+                                <rect key="frame" x="30" y="626" width="333" height="38"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Змінити за допомогою делегата">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dWM-xZ-R8e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjN-N7-hcY">
+                                <rect key="frame" x="30" y="686" width="333" height="35"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="SY6-07-ARD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Yzi-Qs-lNV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Змінити за допомогою замикання">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editDataWithClosure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Orf-cd-7Kz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstItem="jnl-Wv-ViT" firstAttribute="top" secondItem="Dfd-3G-jXd" secondAttribute="bottom" constant="30" id="1xw-2h-dT6"/>
+                            <constraint firstItem="b4d-7p-7kh" firstAttribute="top" secondItem="jnl-Wv-ViT" secondAttribute="bottom" constant="30" id="7y9-Kb-eM7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SWB-fh-8iV" secondAttribute="trailing" constant="104" id="GEZ-X4-glx"/>
+                            <constraint firstItem="Dfd-3G-jXd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="IrG-rR-c6z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jnl-Wv-ViT" secondAttribute="trailing" constant="30" id="W6E-ek-3Xq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Dfd-3G-jXd" secondAttribute="bottom" constant="293" id="Xm0-pq-M8Q"/>
+                            <constraint firstItem="SWB-fh-8iV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="261" id="b1C-jE-d6B"/>
+                            <constraint firstItem="bjN-N7-hcY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ecZ-tB-KNU"/>
+                            <constraint firstItem="bjN-N7-hcY" firstAttribute="centerX" secondItem="Dfd-3G-jXd" secondAttribute="centerX" id="gfq-0h-ijf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jnl-Wv-ViT" secondAttribute="bottom" constant="222" id="guB-hH-gUN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b4d-7p-7kh" secondAttribute="trailing" constant="30" id="imH-df-8F4"/>
+                            <constraint firstItem="jnl-Wv-ViT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="kef-Jv-sLm"/>
+                            <constraint firstItem="Dfd-3G-jXd" firstAttribute="top" secondItem="SWB-fh-8iV" secondAttribute="bottom" constant="50" id="mgp-u4-NCa"/>
+                            <constraint firstItem="b4d-7p-7kh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qAC-AN-9Ue"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjN-N7-hcY" secondAttribute="trailing" constant="30" id="sCp-gm-ea8"/>
+                            <constraint firstItem="bjN-N7-hcY" firstAttribute="top" secondItem="b4d-7p-7kh" secondAttribute="bottom" constant="22" id="xIt-sV-A5e"/>
+                            <constraint firstItem="SWB-fh-8iV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="101" id="xQ0-Kc-jja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SWB-fh-8iV" secondAttribute="bottom" constant="381" id="zH1-fv-B69"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Scene A" largeTitleDisplayMode="always" id="HVf-Ko-H5Z"/>
+                    <connections>
+                        <outlet property="dataLabel" destination="SWB-fh-8iV" id="Yvk-EC-tDl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
+        </scene>
+        <!--Scene B-->
+        <scene sceneID="dB8-jI-vew">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="eJF-ke-GCL" customClass="SecondViewController" customModule="TransferApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="afl-VY-Nlk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h92-o6-FLn">
+                                <rect key="frame" x="23.333333333333343" y="486" width="346.33333333333326" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Зберегти за допомогою властивостей">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithProperty:" destination="eJF-ke-GCL" eventType="touchUpInside" id="ifS-SS-L42"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENE-QX-O8O">
+                                <rect key="frame" x="30" y="551" width="333" height="33"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Зберегти за допомогою unwind">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="rT0-b8-fhd" kind="unwind" identifier="toFirstScreen" unwindAction="unwindToFirstScreen:" id="JcA-CS-LXh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQJ-km-bIk">
+                                <rect key="frame" x="30" y="614" width="333" height="36"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="zhI-B0-5zs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Зберегти за допомогою делегата">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithDelegate:" destination="eJF-ke-GCL" eventType="touchUpInside" id="DcU-9J-eB1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrN-t5-f5h">
+                                <rect key="frame" x="30" y="680" width="333" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QqM-Zu-Cxu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Зберегти за допомогою замикання">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveDataWithClosure:" destination="eJF-ke-GCL" eventType="touchUpInside" id="mfP-Af-ch2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-Yu-V9u">
+                                <rect key="frame" x="16" y="401" width="361" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="871-b9-0Wt"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="ENE-QX-O8O" firstAttribute="leading" secondItem="871-b9-0Wt" secondAttribute="leading" constant="30" id="3hy-tK-3M7"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="bottom" secondItem="ENE-QX-O8O" secondAttribute="bottom" constant="234" id="550-P0-oLl"/>
+                            <constraint firstItem="HrN-t5-f5h" firstAttribute="top" secondItem="fQJ-km-bIk" secondAttribute="bottom" constant="30" id="7RY-dc-jhP"/>
+                            <constraint firstItem="7bo-Yu-V9u" firstAttribute="leading" secondItem="afl-VY-Nlk" secondAttribute="leadingMargin" id="9Ex-qP-eZC"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="trailing" secondItem="HrN-t5-f5h" secondAttribute="trailing" constant="30" id="CPb-Mc-tkv"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="bottom" secondItem="fQJ-km-bIk" secondAttribute="bottom" constant="168" id="NbL-cH-qhg"/>
+                            <constraint firstItem="ENE-QX-O8O" firstAttribute="top" secondItem="h92-o6-FLn" secondAttribute="bottom" constant="30" id="S2J-zc-HFq"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="trailing" secondItem="fQJ-km-bIk" secondAttribute="trailing" constant="30" id="VVy-x9-7ng"/>
+                            <constraint firstItem="7bo-Yu-V9u" firstAttribute="centerX" secondItem="h92-o6-FLn" secondAttribute="centerX" id="Wf7-4H-jXN"/>
+                            <constraint firstItem="HrN-t5-f5h" firstAttribute="leading" secondItem="871-b9-0Wt" secondAttribute="leading" constant="30" id="WoE-yw-Kim"/>
+                            <constraint firstItem="fQJ-km-bIk" firstAttribute="leading" secondItem="871-b9-0Wt" secondAttribute="leading" constant="30" id="YBQ-cp-L9b"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="bottom" secondItem="h92-o6-FLn" secondAttribute="bottom" constant="297" id="bWC-4G-Srn"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="bottom" secondItem="HrN-t5-f5h" secondAttribute="bottom" constant="108" id="cai-7z-hD7"/>
+                            <constraint firstItem="h92-o6-FLn" firstAttribute="top" secondItem="7bo-Yu-V9u" secondAttribute="bottom" constant="35" id="cs7-ew-Y71"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="trailing" secondItem="ENE-QX-O8O" secondAttribute="trailing" constant="30" id="fH3-Ln-vrZ"/>
+                            <constraint firstItem="871-b9-0Wt" firstAttribute="trailing" secondItem="h92-o6-FLn" secondAttribute="trailing" constant="23.329999999999998" id="heO-q6-2AT"/>
+                            <constraint firstItem="fQJ-km-bIk" firstAttribute="top" secondItem="ENE-QX-O8O" secondAttribute="bottom" constant="30" id="hx8-R7-50f"/>
+                            <constraint firstItem="h92-o6-FLn" firstAttribute="leading" secondItem="871-b9-0Wt" secondAttribute="leading" constant="23.329999999999998" id="tEG-K5-nxA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scene B" id="hfo-mc-BpQ"/>
+                    <connections>
+                        <outlet property="dataTextField" destination="7bo-Yu-V9u" id="SUy-hE-p4s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEl-NT-r7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rT0-b8-fhd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1799.2366412213739" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dOI-gs-f8G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YaA-va-dW3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="wwH-Gs-crm">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7ci-Z8-0BQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27y-mD-ZCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
